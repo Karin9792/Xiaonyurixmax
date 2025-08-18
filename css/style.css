@@ -350,6 +350,26 @@ textarea {
         max-width: 150px;
         margin: 0 auto 20px;
     }
+
+     /* Detailページ レスポンシブ */
+    .detail-section {
+        padding-top: 40px;
+    }
+    .detail-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .detail-gallery,
+    .detail-info {
+        width: 100%;
+    }
+    .detail-title {
+        font-size: 1.5rem;
+    }
+    .detail-price {
+        font-size: 1.6rem;
+    }
+
     /* ここに後でハンバーガーメニューのスタイルを追加します */
     .header-nav {
         display: none;
@@ -371,4 +391,136 @@ textarea {
         max-width: 300px;
         margin: 0 auto;
     }
+}
+
+/* ===============================================
+    Productsページ
+   =============================================== */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.product-item {
+    text-align: center;
+}
+
+.product-item img {
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.product-item:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.product-item h3 {
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* ===============================================
+    Detailページ
+   =============================================== */
+
+.detail-section {
+    padding-top: 100px; /* ヘッダーの高さ分 */
+}
+
+.detail-container {
+    display: flex;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.detail-gallery {
+    width: 55%;
+}
+
+.main-image img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.thumbnail-list {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.thumbnail-list li {
+    width: 25%;
+}
+
+.thumb-item {
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.thumb-item:hover,
+.thumb-item.active {
+    opacity: 1;
+}
+
+.detail-info {
+    width: 45%;
+}
+
+.detail-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.detail-description {
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.detail-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #c73a3a;
+    margin-bottom: 30px;
+}
+
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.spec-table th,
+.spec-table td {
+    border: 1px solid #eee;
+    padding: 15px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.spec-table th {
+    background-color: #f9f9f9;
+    width: 30%;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.2rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.add-to-cart-btn:hover {
+    background-color: #555;
 }

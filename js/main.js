@@ -40,3 +40,21 @@ const observer = new IntersectionObserver((entries) => {
 fadeInElements.forEach(el => {
     observer.observe(el);
 });
+
+// 商品詳細ページの画像ギャラリー
+const mainImage = document.querySelector('.main-image img');
+const thumbs = document.querySelectorAll('.thumb-item');
+
+// thumbsが存在する場合（＝商品詳細ページの場合）のみ実行
+if (thumbs.length > 0) {
+    thumbs.forEach(thumb => {
+        thumb.addEventListener('click', function() {
+            // クリックされたサムネイルの画像パスをメイン画像に設定
+            mainImage.src = this.src;
+
+            // activeクラスの付け替え
+            document.querySelector('.thumb-item.active').classList.remove('active');
+            this.classList.add('active');
+        });
+    });
+}

@@ -58,3 +58,15 @@ if (thumbs.length > 0) {
         });
     });
 }
+
+// ハンバーガーメニュー
+const hamburger = document.querySelector('.hamburger-menu');
+const nav = document.querySelector('.header-nav');
+
+// hamburgerが存在する場合のみ実行
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        nav.classList.toggle('open');
+    });
+}

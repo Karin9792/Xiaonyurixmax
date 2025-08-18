@@ -36,6 +36,10 @@ ul {
 }
 
 /* --- header --- */
+.hamburger-menu {
+    display: none; /* PCでは非表示 */
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -371,9 +375,79 @@ textarea {
     }
 
     /* ここに後でハンバーガーメニューのスタイルを追加します */
-    .header-nav {
-        display: none;
+
+/* --- ハンバーガーメニューここから --- */
+    .hamburger-menu {
+        display: block; /* スマホでのみ表示 */
+        position: fixed; /* スクロールしても追従 */
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255,255,255,0.8);
+        border: none;
+        border-radius: 5px;
+        z-index: 100; /* ナビゲーションより手前に */
+        cursor: pointer;
     }
+
+    .hamburger-bar {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: #333;
+        margin: 6px auto;
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* ハンバーガーメニューが開いた時のスタイル */
+    .hamburger-menu.open .hamburger-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.open .hamburger-bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.open .hamburger-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* ナビゲーションメニュー (スマホ用) */
+    .header-nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* 初期状態では画面外に隠す */
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        z-index: 99;
+        transition: right 0.4s;
+        display: block; /* display:noneを上書き */
+    }
+
+    .header-nav.open {
+        right: 0; /* openクラスが付いたら表示 */
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+        padding-top: 80px;
+    }
+
+    .header-nav li {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .header-nav a {
+        display: block;
+        padding: 20px;
+        color: #333; /* 文字色を白から黒に変更 */
+        text-shadow: none; /* 文字の影を消す */
+        font-size: 1.1rem;
+    }
+    /* --- ハンバーガーメニューここまで --- */```
 
     .hero-message h2 {
         font-size: 1.8rem;

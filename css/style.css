@@ -1,4 +1,4 @@
-/* 基本設定 */
+/* --- * --- */
 body {
     font-family: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
     color: #333;
@@ -35,7 +35,7 @@ ul {
     margin-bottom: 40px;
 }
 
-/* ヘッダー */
+/* --- header --- */
 .header {
     display: flex;
     justify-content: space-between;
@@ -72,7 +72,7 @@ ul {
     opacity: 0.8;
 }
 
-/* メインビジュアル (ヒーローセクション) */
+/* -- main -- */
 .hero {
     position: relative;
     height: 100vh;
@@ -159,7 +159,7 @@ ul {
     color: #fff;
 }
 
-/* フッター */
+/* -- footer -- */
 .footer {
     background-color: #f7f7f7;
     padding: 40px 20px;
@@ -194,6 +194,128 @@ ul {
     transform: translateY(0);
 }
 
+/* 下層ページ用メインビジュアル */
+.page-hero {
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.page-title {
+    font-size: 3rem;
+    font-family: serif;
+}
+
+/* Aboutページ */
+.about-section {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-section-title {
+    font-size: 1.8rem;
+    font-family: serif;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.about-text {
+    line-height: 2;
+}
+
+.bg-beige {
+    background-color: #f7f3f0;
+}
+
+.commitment-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.commitment-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.profile-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+}
+
+.profile-image {
+    width: 30%;
+}
+
+.profile-image img {
+    border-radius: 50%;
+}
+
+.profile-text {
+    width: 70%;
+}
+
+/* Contactページ */
+.contact-section {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-lead {
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.required {
+    background-color: #c73a3a;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-notice {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 30px;
+}
+
 
 /* レスポンシブ対応 (スマートフォン) */
 @media (max-width: 768px) {
@@ -206,6 +328,27 @@ ul {
 
     .header {
         padding: 15px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    /* Aboutページ レスポンシブ */
+    .commitment-flex,
+    .profile-flex {
+        flex-direction: column;
+    }
+
+    .profile-image,
+    .profile-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-image {
+        max-width: 150px;
+        margin: 0 auto 20px;
     }
     /* ここに後でハンバーガーメニューのスタイルを追加します */
     .header-nav {

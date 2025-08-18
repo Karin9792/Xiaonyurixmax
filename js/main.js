@@ -31,7 +31,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            // 一度表示されたら監視を停止
+            // 一度表示されたら監視を停止させる
             observer.unobserve(entry.target);
         }
     });
